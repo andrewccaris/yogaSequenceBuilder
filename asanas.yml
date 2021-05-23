@@ -20,6 +20,11 @@ linkers:
       english: "Upward Facing Dog"
       sanskrit: "Urdhva Mukha Svanasana"
       orientation: floor
+  - 4:
+      rotation: neutral
+      english: "Chaturanga to Upward-Facing Dog to Downward-Facing Dog"
+      sanskrit: "Vinyasa"
+      orientation: floor
 rising-action:
   - 0: 
       rotation: external
@@ -49,7 +54,7 @@ rising-action:
   - 5: 
       rotation: neutral
       english: "Dolphin Pose"
-      sanskrit: ""
+      sanskrit: "Ardha Pincha Mayurasana"
       orientation: floor
   - 6: 
       rotation: neutral
