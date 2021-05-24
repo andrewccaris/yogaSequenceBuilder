@@ -1,7 +1,7 @@
 from kivy.lang import Builder
 
 from kivymd.app import MDApp
-from kivymd.uix.label import MDLabel
+from kivymd.uix.list import TwoLineListItem
 
 import yoga_sequence_builder
 
@@ -13,12 +13,18 @@ class Main(MDApp):
     def build(self):
         for asana in yoga_sequence_builder.get_sequence(60):
             self.screen.ids.box_sixty_minute_sequence.add_widget(
-                MDLabel(
-                    text= f"{asana}",
-                    halign="center",
+                TwoLineListItem(
+                    text= f"{asana[0]}",
+                    secondary_text= f"{asana[1]}"
                 )
             )
-        self.screen.ids.text_field_ninety_minute_sequence.text = '\n'.join(yoga_sequence_builder.get_sequence(90))
+        for asana in yoga_sequence_builder.get_sequence(90):
+            self.screen.ids.box_ninety_minute_sequence.add_widget(
+                TwoLineListItem(
+                    text= f"{asana[0]}",
+                    secondary_text= f"{asana[1]}"
+                )
+            )     
         return self.screen
 
 Main().run()

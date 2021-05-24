@@ -65,9 +65,9 @@ def build_sequence( full_asanas, vinyasa_flow, time ):
         else:
             asana = get_random_asana(full_asanas, 'falling-action')
 
-        asana_name = get_asana_english_name(asana) + ': ' + get_asana_sanskrit_name(asana)
-        if link or asana_name not in list:
-            list.append( asana_name )
+        asana_names = (get_asana_sanskrit_name(asana), get_asana_english_name(asana) )
+        if link or asana_names not in list:
+            list.append( asana_names )
             link = False
         else:
             x = x - 1

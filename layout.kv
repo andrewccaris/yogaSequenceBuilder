@@ -7,21 +7,19 @@ Screen:
         Widget:
     NavigationLayout:    
         ScreenManager:
+            size_hint_y: 0.89
             id: screen_manager
             Screen:
                 name: "scr1"
-                BoxLayout:
-                    orientation: 'vertical'
-                    ScrollView:
-                        MDList:
-                            id: box_sixty_minute_sequence
+                ScrollView:
+                    MDList:
+                        id: box_sixty_minute_sequence
         
             Screen:
                 name: "scr2"
-                MDLabel:
-                    id: text_field_ninety_minute_sequence
-                    text: "Generating Asanas"
-                    halign: "center"
+                ScrollView:
+                    MDList:
+                        id: box_ninety_minute_sequence
                         
         MDNavigationDrawer:
             id: nav_draw
@@ -47,7 +45,7 @@ Screen:
                 height: self.texture_size[1]
         
             MDLabel:
-                text: "youreamil@gmail.com"
+                text: "youremail@gmail.com"
                 font_style: "Caption"
                 size_hint_y: None
                 height: self.texture_size[1]
@@ -61,7 +59,7 @@ Screen:
     
                         text: "60 minute sequence"
                         IconLeftWidget:
-                            icon: "home"
+                            icon: 'yoga'
     
                     OneLineAvatarListItem:
                         on_press:
@@ -69,6 +67,6 @@ Screen:
                             screen_manager.current = "scr2"
                         text: "90 minute sequence"
                         IconLeftWidget:
-                            icon: 'information'
+                            icon: 'yoga'
                                 
             Widget:
