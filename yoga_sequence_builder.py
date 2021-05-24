@@ -75,58 +75,13 @@ def build_sequence( full_asanas, vinyasa_flow, time ):
             
     return list
 
-if __name__ == '__main__':
+def get_sequence_as_string( sequence ):
+    return '\n'.join(sequence)
+
+def get_sequence( time ):
     __location__ = os.path.realpath( 
         os.path.join(os.getcwd(), os.path.dirname(__file__)))
     stream = open(os.path.join(__location__,'asanas.yml'), 'r')
     full_asanas = yaml.safe_load(stream)
 
-    str_val = input("Options 30, 60, 90, 120, exit :- ")
-    while str_val != 'exit':
-        val = int(str_val)
-        if val == 30 or val == 60 or val == 90 or val == 120:
-            sequence = build_sequence(full_asanas, True, val)
-            print( str_val + ' Minute sequence:')
-            print( '\n'.join( sequence ) )
-        else:
-            print("Invalid time: 60,90,120 min classes are supported.")
-        str_val = input("Options 60,90,exit :- ")
-
-    """
-    60 Minute sequence:
-    Half Bound Lotus Standing Pose: Ardha Baddha Padmottanasana
-    Mountain Pose: Tadasana
-    Chaturanga to Upward-Facing Dog to Downward-Facing Dog: Vinyasa
-    Sphinx Pose: Salamba Bhujangasana
-    Headstand: Sirsasana
-    Chaturanga to Upward-Facing Dog to Downward-Facing Dog: Vinyasa
-    Scale Pose: Tolasana
-    Cow Pose: Goasana
-    Chaturanga to Upward-Facing Dog to Downward-Facing Dog: Vinyasa
-    Wide Legged Standing Forward Bend Pose: Prasarita Paddotanasana
-    Triangle Pose: Trikonasana
-    Chaturanga to Upward-Facing Dog to Downward-Facing Dog: Vinyasa
-    Standing Spinal Twist Pose: Katichakrasana
-    Chaturanga to Upward-Facing Dog to Downward-Facing Dog: Vinyasa
-    Standing Half Forward Bend Pose: Ardha Uttanasana
-    Chaturanga to Upward-Facing Dog to Downward-Facing Dog: Vinyasa
-    Warrior II Pose: Virabhadrasana II
-    Dolphin Pose: Ardha Pincha Mayurasana
-    Chaturanga to Upward-Facing Dog to Downward-Facing Dog: Vinyasa
-    Warrior I Pose: Virabhadrasana I
-    Chaturanga to Upward-Facing Dog to Downward-Facing Dog: Vinyasa
-    Threading the Needle: Parsva Balasana
-    Warrior II Pose: Virabhadrasana III
-    Bridge Pose on Elbows: Dvapda Dhanurasana
-    Upward Facing Forward Bend Pose: Urdhva Mukha Paschimottanasana
-    Seated Forward Bend Pose: Paschimottanasana
-    Plow Pose: Halasana
-    Camel Pose: Ustrasana
-    Revolved Head to Knee Pose: Parivritta Janu Sirsasana
-    Child Pose: Balasana
-    Fire Log Pose: Agni Stambhasana
-    Royal Pigeon Pose: Raja Kapotasana
-    Half Lotus Pose: Ardha Padmasana
-    Crocodile Pose: Makarasana
-    Upward Facing Two Foot Staff Pose: Dwi Pada Viparita Dandasana
-    """
+    return build_sequence(full_asanas, True, int(time))
