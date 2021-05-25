@@ -10,12 +10,15 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
+        with:
+          path: master
 
       - name: Build with Buildozer
         uses: ArtemSBulgakov/buildozer-action@v1
         id: buildozer
         with:
-          workdir: main
+          repository_root: master
+          workdir: test_app
           buildozer_version: stable
 
       - name: Upload artifacts
