@@ -3,7 +3,12 @@ import os
 import random
 
 class YogaSequenceBuilder:
-        
+    def __init__(self):
+        __location__ = os.path.realpath(
+            os.path.join(os.getcwd(), os.path.dirname(__file__)))
+        stream = open(os.path.join(__location__,'asanas.yml'), 'r')
+        self.full_asanas = yaml.safe_load(stream)
+
     def print_asana_dictionary(self, asanas):
         for type,poses in asanas.items():
             for pose in poses:
@@ -51,7 +56,6 @@ class YogaSequenceBuilder:
         link = False
         moves = int(time / 1.5)
         rising_moves = int(moves / 1.6)
-        asana_name = ""
         for x in range(0, moves):
             if x < rising_moves:
                 if x % 3 == 0 and x != 0:
@@ -81,9 +85,4 @@ class YogaSequenceBuilder:
         return '\n'.join(sequence)
 
     def get_sequence(self, time):
-        __location__ = os.path.realpath(
-            os.path.join(os.getcwd(), os.path.dirname(__file__)))
-        stream = open(os.path.join(__location__,'asanas.yml'), 'r')
-        full_asanas = yaml.safe_load(stream)
-
-        return self.build_sequence(full_asanas, True, int(time))
+        return self.build_sequence(self.full_asanas, True, int(time))
