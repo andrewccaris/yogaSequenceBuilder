@@ -3,7 +3,7 @@ from kivy.lang import Builder
 from kivymd.app import MDApp
 from kivymd.uix.list import TwoLineListItem
 
-from yoga_sequence_builder import YogaSequenceBuilder
+import importlib
 
 class Main(MDApp):
     def __init__(self, **kwargs):
@@ -11,7 +11,8 @@ class Main(MDApp):
         self.screen = Builder.load_file('layout.kv')
 
     def build(self):
-        self.yoga = YogaSequenceBuilder()
+        yoga = importlib.import_module('yoga_sequence_builder')
+        self.yoga = yoga.YogaSequenceBuilder()
         self.build_asanas()     
         return self.screen
 
