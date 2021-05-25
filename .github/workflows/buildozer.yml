@@ -18,7 +18,7 @@ jobs:
         id: buildozer
         with:
           repository_root: master
-          workdir: test_app
+          workdir: yoga_sequence_app
           buildozer_version: stable
 
       - name: Upload artifacts
