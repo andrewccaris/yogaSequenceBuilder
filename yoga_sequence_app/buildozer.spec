@@ -16,21 +16,17 @@ source.dir = .
 source.include_exts = py,png,jpg,jpeg,ttf,kv,json,txt
 
 # (list) List of inclusions using pattern matching
-source.include_patterns = assets/*,libs/*,libs/kv/*
+source.include_patterns = assets/*
 
 # (str) Application versioning (method 2)
 version.regex = __version__ = ['"](.*)['"]
-version.filename = %(source.dir)s/../kivymd/__init__.py
+version.filename = %(source.dir)s/libs/__init__.py
 
 android.numeric_version = 1
 
 # (list) Application requirements
 # comma separated e.g. requirements = sqlite3,kivy
-requirements = python3,kivy==2.0.0,https://github.com/kivymd/KivyMD/archive/master.zip,pygments,sdl2_ttf==2.0.15,pillow
-
-# (str) Custom source folders for requirements
-# Sets custom source for any requirements with recipes
-requirements.source.kivymd = ../kivymd
+requirements = python3,kivy==2.0.0,git+https://github.com/kivymd/KivyMD.git@master
 
 # (str) Presplash of the application
 presplash.filename = %(source.dir)s/assets/presplash.png
@@ -51,7 +47,7 @@ android.presplash_color = #FFFFFF
 android.permissions = WRITE_EXTERNAL_STORAGE
 
 # (int) Target Android API, should be as high as possible.
-android.api = 28
+android.api = 30
 
 # (int) Minimum API your APK will support.
 android.minapi = 21
