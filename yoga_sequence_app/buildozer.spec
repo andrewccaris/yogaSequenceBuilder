@@ -16,7 +16,7 @@ source.dir = .
 source.include_exts = py,png,jpg,jpeg,ttf,kv,json,txt
 
 # (list) List of inclusions using pattern matching
-source.include_patterns = assets/*
+source.include_patterns = assets/*,libs/*,libs/kv/*
 
 # (str) Application versioning (method 2)
 version.regex = __version__ = ['"](.*)['"]
