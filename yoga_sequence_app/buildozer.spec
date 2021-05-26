@@ -5,7 +5,10 @@ package.name = asanageneratorapp
 package.domain = org.asanagenerator
 
 source.dir = .
-source.include_exts = py,png,kv,yml
+source.include_exts = py,png,kv,yml,atlas
+source.include_patterns = assets/*,libs/*
+source.exclude_exts = spec
+source.exclude_dirs = build, dist
 
 version = 0.1
 requirements = python3,kivy,kivymd
