@@ -44,7 +44,7 @@ fullscreen = 0
 android.presplash_color = #FFFFFF
 
 # (list) Permissions
-android.permissions = WRITE_EXTERNAL_STORAGE
+android.permissions = WRITE_EXTERNAL_STORAGE, INTERNET
 
 # (int) Target Android API, should be as high as possible.
 android.api = 30
@@ -82,7 +82,7 @@ log_level = 2
 warn_on_root = 0
 
 # (str) Path to build artifact storage, absolute or relative to spec file
-build_dir = ./.buildozer
+# build_dir = ./.buildozer
 
 # (str) Path to build output (i.e. .apk, .ipa) storage
-bin_dir = ./bin
+# bin_dir = ./bin

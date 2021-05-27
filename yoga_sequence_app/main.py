@@ -6,8 +6,8 @@ from kivymd.uix.list import TwoLineListItem
 from libs.yoga_sequence_builder import YogaSequenceBuilder
 
 os.environ["YOGA_SEQUENCE_ROOT"] = os.path.dirname(os.path.abspath(__file__))
-os.environ["YOGA_SEQUENCE_LIBS"] = os.path.join(
-    os.environ["YOGA_SEQUENCE_ROOT"], f"libs{os.sep}"
+os.environ["YOGA_SEQUENCE_ASANAS"] = os.path.join(
+    os.environ["YOGA_SEQUENCE_ROOT"], "libs", "asanas.yml"
 )
 os.environ["YOGA_SEQUENCE_ASSETS"] = os.path.join(
     os.environ["YOGA_SEQUENCE_ROOT"], f"assets{os.sep}"
@@ -16,12 +16,12 @@ os.environ["YOGA_SEQUENCE_ASSETS"] = os.path.join(
 class Main(MDApp):
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
-        __location__ = os.path.realpath(
-            os.path.join(os.getcwd(), os.path.dirname(__file__)))
-        self.screen = Builder.load_file( os.path.join(os.environ["YOGA_SEQUENCE_ROOT"], "libs", "kv", "layout.kv"))
+        self.screen = Builder.load_file( os.path.join(
+            os.environ["YOGA_SEQUENCE_ROOT"], "libs", "kv", "layout.kv")
+        )
 
     def build(self):
-        self.yoga = YogaSequenceBuilder()
+        self.yoga = YogaSequenceBuilder(os.environ["YOGA_SEQUENCE_ASANAS"])
         self.build_asanas()     
         return self.screen
 

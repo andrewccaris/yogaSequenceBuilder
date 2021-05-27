@@ -3,8 +3,8 @@ import os
 import random
 
 class YogaSequenceBuilder:
-    def __init__(self):
-        stream = open(os.path.join( os.environ["YOGA_SEQUENCE_LIBS"], 'asanas.yml'), 'r')
+    def __init__(self, asanas_file):
+        stream = open(os.path.join( asanas_file ), 'r')
         self.full_asanas = yaml.safe_load(stream)
 
     def print_asana_dictionary(self, asanas):
