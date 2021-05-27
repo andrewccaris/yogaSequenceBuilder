@@ -26,7 +26,7 @@ android.numeric_version = 1
 
 # (list) Application requirements
 # comma separated e.g. requirements = sqlite3,kivy
-requirements = python3,kivy==2.0.0rc3,kivy-deps.glew==0.2.0,kivy-deps.sdl2==0.2.0,git+https://github.com/kivymd/KivyMD.git@master,pyyaml,sdl2_ttf==2.0.15,pillow
+requirements = python3,kivy==2.0.0rc3,git+https://github.com/kivymd/KivyMD.git@master,pyyaml,sdl2_ttf==2.0.15,pillow
 
 # (str) Presplash of the application
 presplash.filename = %(source.dir)s/assets/presplash.png
@@ -70,7 +70,7 @@ android.accept_sdk_license = True
 # android.logcat_filters = *:S python:D
 
 # (str) The Android arch to build for, choices: armeabi-v7a, arm64-v8a, x86, x86_64
-android.arch = armeabi-v7a
+android.arch = arm64-v8a
 
 
 [buildozer]
