@@ -13,7 +13,7 @@ package.domain = org.asanas
 source.dir = .
 
 # (list) Source files to include (let empty to include all the files)
-source.include_exts = py,png,jpg,jpeg,ttf,kv,json,txt
+source.include_exts = py,png,kv,yml
 
 # (list) List of inclusions using pattern matching
 source.include_patterns = assets/*, libs/*
