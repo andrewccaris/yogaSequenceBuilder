@@ -4,8 +4,9 @@ import random
 
 class YogaSequenceBuilder:
     def __init__(self):
-        __location__ = os.path.realpath(
-            os.path.join(os.getcwd(), os.path.dirname(__file__)))
+        __location__ = os.path.join(
+            os.environ["YOGA_SEQUENCE_ROOT"], f"libs{os.sep}"
+        )
         stream = open(os.path.join(__location__,'asanas.yml'), 'r')
         self.full_asanas = yaml.safe_load(stream)
 
