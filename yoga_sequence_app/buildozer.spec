@@ -16,7 +16,7 @@ source.dir = .
 source.include_exts = py,png,jpg,jpeg,ttf,kv,json,txt
 
 # (list) List of inclusions using pattern matching
-source.include_patterns = assets/*
+source.include_patterns = assets/*, libs/*
 
 # (str) Application versioning (method 2)
 version.regex = __version__ = ['"](.*)['"]
@@ -26,7 +26,7 @@ android.numeric_version = 1
 
 # (list) Application requirements
 # comma separated e.g. requirements = sqlite3,kivy
-requirements = python3==3.9.5,kivy==2.0.0,git+https://github.com/kivymd/KivyMD.git@master
+requirements = python3,kivy==2.0.0,git+https://github.com/kivymd/KivyMD.git@master,pyyaml
 
 # (str) Presplash of the application
 presplash.filename = %(source.dir)s/assets/presplash.png
