@@ -1,7 +1,7 @@
 #:import environ os.environ
 
 Screen:
-    BoxLayout:
+    MDBoxLayout:
         orientation: 'vertical'
         MDToolbar:
             title: "Generate Sequence"
@@ -9,7 +9,7 @@ Screen:
             left_action_items: [["menu", lambda x: nav_draw.set_state()]]
             right_action_items: [["cogs", lambda x: app.callback_refresh_asanas()]]
         Widget:
-    NavigationLayout:    
+    MDNavigationLayout:    
         ScreenManager:
             size_hint_y: 0.89
             id: screen_manager
