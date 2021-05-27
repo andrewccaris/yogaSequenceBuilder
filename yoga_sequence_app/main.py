@@ -1,16 +1,14 @@
+import os
+
 from kivy.lang import Builder
 from kivymd.app import MDApp
 from kivymd.uix.list import TwoLineListItem
 from libs.yoga_sequence_builder import YogaSequenceBuilder
-from pathlib import Path
-import os, sys
 
-if getattr(sys, "frozen", False):  # bundle mode with PyInstaller
-    os.environ["YOGA_SEQUENCE_ROOT"] = sys._MEIPASS
-else:
-    sys.path.append(os.path.abspath(__file__).split("yoga_sequence_app")[0])
-    os.environ["YOGA_SEQUENCE_ROOT"] = str(Path(__file__).parent)
-
+os.environ["YOGA_SEQUENCE_ROOT"] = os.path.dirname(os.path.abspath(__file__))
+os.environ["YOGA_SEQUENCE_LIBS"] = os.path.join(
+    os.environ["YOGA_SEQUENCE_ROOT"], f"libs{os.sep}"
+)
 os.environ["YOGA_SEQUENCE_ASSETS"] = os.path.join(
     os.environ["YOGA_SEQUENCE_ROOT"], f"assets{os.sep}"
 )
